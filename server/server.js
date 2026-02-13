@@ -3,19 +3,22 @@ const cors = require('cors');
 const fs = require('fs');
 const path = require('path');
 const app = express();
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 
 app.use(cors());
 app.use(express.json());
 
 const DB_FILE = path.join(__dirname, 'responses.json');
 
+// Serve static files from the React app
+app.use(express.static(path.join(__dirname, '../client/dist')));
+
 // Initialize DB file if not exists
 if (!fs.existsSync(DB_FILE)) {
     fs.writeFileSync(DB_FILE, JSON.stringify([]));
 }
 
-app.get('/', (req, res) => {
+app.get('/api/health', (req, res) => {
     res.send('Valentine Server is Running! 💖');
 });
 
@@ -55,6 +58,12 @@ app.get('/api/responses', (req, res) => {
     } else {
         res.json([]);
     }
+});
+
+
+// Handle any requests that don't match the ones above
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, '../client/dist/index.html'));
 });
 
 app.listen(PORT, () => {
