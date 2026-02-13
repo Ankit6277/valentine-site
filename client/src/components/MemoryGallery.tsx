@@ -1,10 +1,10 @@
 import { motion } from "framer-motion";
 
 const memories = [
-    { id: 1, title: "Our First Date", date: "Jan 1, 2024", desc: "The sparkle in your eyes...", img: "/photo1.jpeg" },
-    { id: 2, title: "Beach Sunset", date: "Feb 14, 2024", desc: "Hand in hand, watching the sun dip...", img: "/photo2.jpeg" },
-    { id: 3, title: "Movie Night", date: "Mar 10, 2024", desc: "Cuddles and popcorn.", img: "/photo3.jpeg" },
-    { id: 4, title: "Adventure Time", date: "Apr 5, 2024", desc: "Exploring the unknown together...", img: "/photo4.jpeg" },
+    { id: 1, title: "The Smile", date: "Jan 1, 2024", desc: "Keeping it classic in every sense.", img: "/photo1.jpeg" },
+    { id: 2, title: "The Original", date: "Feb 14, 2024", desc: "Life imitates art, but the reality is better.", img: "/photo2.jpeg" },
+    { id: 3, title: "The Selfie", date: "Mar 10, 2024", desc: "Low light, high energy.", img: "/photo3.jpeg" },
+    { id: 4, title: "The Stare", date: "Apr 5, 2024", desc: "Find someone who looks at you like this.", img: "/photo4.jpeg" },
 ];
 
 const MemoryGallery = () => {
