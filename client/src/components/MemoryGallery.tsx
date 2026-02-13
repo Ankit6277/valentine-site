@@ -1,10 +1,10 @@
 import { motion } from "framer-motion";
 
 const memories = [
-    { id: 1, title: "The Smile", date: "Jan 1, 2024", desc: "Keeping it classic in every sense.", img: "/photo1.jpeg" },
-    { id: 2, title: "The Original", date: "Feb 14, 2024", desc: "Life imitates art, but the reality is better.", img: "/photo2.jpeg" },
-    { id: 3, title: "The Selfie", date: "Mar 10, 2024", desc: "Low light, high energy.", img: "/photo3.jpeg" },
-    { id: 4, title: "The Stare", date: "Apr 5, 2024", desc: "Find someone who looks at you like this.", img: "/photo4.jpeg" },
+    { id: 1, title: "The Smile", desc: "Keeping it classic in every sense.", img: "/photo1.jpeg" },
+    { id: 2, title: "The Original", desc: "Life imitates art, but the reality is better.", img: "/photo2.jpeg" },
+    { id: 3, title: "The Selfie", desc: "Low light, high energy.", img: "/photo3.jpeg" },
+    { id: 4, title: "The Stare", desc: "Find someone who looks at you like this.", img: "/photo4.jpeg" },
 ];
 
 const MemoryGallery = () => {
@@ -46,7 +46,7 @@ const MemoryGallery = () => {
                         </div>
 
                         <h3 className="text-xl font-outfit font-bold text-gray-800">{mem.title}</h3>
-                        <p className="text-sm text-gray-500 font-outfit">{mem.date}</p>
+                        {/* <p className="text-sm text-gray-500 font-outfit">{mem.date}</p> */}
                     </motion.div>
                 ))}
             </div>
