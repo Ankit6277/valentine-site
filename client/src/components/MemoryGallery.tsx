@@ -27,7 +27,7 @@ const MemoryGallery = () => {
                         whileInView={{ opacity: 1, scale: 1 }}
                         whileHover={{ scale: 1.05, rotate: index % 2 === 0 ? 2 : -2 }}
                         transition={{ duration: 0.5, delay: index * 0.1 }}
-                        className="bg-white/80 backdrop-blur-sm p-4 rounded-xl shadow-lg border border-pink-100 hover:shadow-2xl hover:border-valentine-red cursor-pointer group"
+                        className="bg-white/80 backdrop-blur-sm p-4 rounded-xl shadow-lg border border-pink-100 hover:shadow-2xl hover:border-valentine-red cursor-pointer group flex flex-col items-center text-center"
                     >
                         <div className="aspect-video bg-gray-200 rounded-lg overflow-hidden mb-4 relative group-hover:shadow-inner">
                             <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center p-4 z-10">
