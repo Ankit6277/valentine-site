@@ -1,5 +1,5 @@
 import { useEffect, useState, useRef } from "react";
-import { Howl, Howler } from "howler";
+import { Howl } from "howler";
 import { Volume2, VolumeX } from "lucide-react";
 
 const AudioController = () => {

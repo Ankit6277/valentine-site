@@ -1,4 +1,4 @@
-import { useState, useRef } from "react";
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { Mail } from "lucide-react";
 import confetti from "canvas-confetti";

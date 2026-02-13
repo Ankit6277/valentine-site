@@ -1,4 +1,4 @@
-import { useState, useRef } from "react";
+import { useState } from "react";
 import { motion, useAnimation } from "framer-motion";
 import confetti from "canvas-confetti";
 
