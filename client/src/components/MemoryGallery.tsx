@@ -1,10 +1,10 @@
 import { motion } from "framer-motion";
 
 const memories = [
-    { id: 1, title: "Our First Date", date: "Jan 1, 2024", desc: "The sparkle in your eyes..." },
-    { id: 2, title: "Beach Sunset", date: "Feb 14, 2024", desc: "Hand in hand, watching the sun dip..." },
-    { id: 3, title: "Movie Night", date: "Mar 10, 2024", desc: "Cuddles and popcorn." },
-    { id: 4, title: "Adventure Time", date: "Apr 5, 2024", desc: "Exploring the unknown together." },
+    { id: 1, title: "Our First Date", date: "Jan 1, 2024", desc: "The sparkle in your eyes...", img: "/photo1.jpeg" },
+    { id: 2, title: "Beach Sunset", date: "Feb 14, 2024", desc: "Hand in hand, watching the sun dip...", img: "/photo2.jpeg" },
+    { id: 3, title: "Movie Night", date: "Mar 10, 2024", desc: "Cuddles and popcorn.", img: "/photo3.jpeg" },
+    { id: 4, title: "Adventure Time", date: "Apr 5, 2024", desc: "Exploring the unknown together...", img: "/photo4.jpeg" },
 ];
 
 const MemoryGallery = () => {
@@ -29,14 +29,20 @@ const MemoryGallery = () => {
                         transition={{ duration: 0.5, delay: index * 0.1 }}
                         className="bg-white/80 backdrop-blur-sm p-4 rounded-xl shadow-lg border border-pink-100 hover:shadow-2xl hover:border-valentine-red cursor-pointer group"
                     >
-                        <div className="aspect-video bg-gray-200 rounded-lg overflow-hidden mb-4 relative">
-                            <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
-                                <p className="text-white font-medium">{mem.desc}</p>
+                        <div className="aspect-video bg-gray-200 rounded-lg overflow-hidden mb-4 relative group-hover:shadow-inner">
+                            <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center p-4 z-10">
+                                <p className="text-white font-medium text-center">{mem.desc}</p>
                             </div>
-                            <div className="w-full h-full bg-pink-50 flex items-center justify-center text-pink-300">
-                                Image Placeholder
-                            </div>
-                            {/* <img src={mem.img} alt={mem.title} className="w-full h-full object-cover" /> */}
+
+                            <img
+                                src={mem.img}
+                                alt={mem.title}
+                                className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
+                                onError={(e) => {
+                                    e.currentTarget.style.display = 'none';
+                                    e.currentTarget.parentElement!.innerHTML = `<div class="w-full h-full bg-pink-100 flex flex-col items-center justify-center text-pink-400 text-xs text-center p-2"><p>Missing Photo</p><code class="bg-white/50 px-1 rounded mt-1">${mem.img}</code></div>`;
+                                }}
+                            />
                         </div>
 
                         <h3 className="text-xl font-outfit font-bold text-gray-800">{mem.title}</h3>

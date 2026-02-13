@@ -11,18 +11,25 @@ const PhotoAltar = () => {
                 className="glass-card p-4 rounded-3xl relative rotate-2 hover:rotate-0 transition-transform duration-500 ease-out"
                 style={{ maxWidth: "90vw", width: "400px" }}
             >
-                <div className="relative overflow-hidden rounded-2xl aspect-[3/4] bg-white">
-                    <div className="absolute inset-0 bg-gradient-to-tr from-pink-200 to-transparent opacity-30 z-10" />
-                    <div className="absolute inset-0 flex items-center justify-center bg-gray-100 text-gray-400">
-                        <span>[Your Beautiful Photo Here]</span>
+                <div className="relative overflow-hidden rounded-2xl aspect-[3/4] bg-white group">
+                    <div className="absolute inset-0 bg-gradient-to-tr from-pink-200 to-transparent opacity-30 z-10 pointer-events-none" />
+
+                    <img
+                        src="/us.jpeg"
+                        alt="Us"
+                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                        onError={(e) => {
+                            e.currentTarget.style.display = 'none';
+                            e.currentTarget.parentElement?.querySelector('.fallback')?.classList.remove('hidden');
+                        }}
+                    />
+
+                    <div className="fallback hidden absolute inset-0 flex items-center justify-center bg-pink-50 text-valentine-red p-4 text-center">
+                        <div>
+                            <p className="font-bold mb-2">📸 Photo Missing!</p>
+                            <p className="text-sm">Put your photo in <br /><code className="bg-pink-100 px-1 rounded">client/public/us.jpeg</code></p>
+                        </div>
                     </div>
-                    {/* 
-            <img 
-               src="/path/to/your/photo.jpg" 
-               alt="Us" 
-               className="w-full h-full object-cover" 
-            /> 
-            */}
                 </div>
 
                 <div className="absolute -top-6 -right-6 text-6xl animate-bounce" style={{ animationDelay: "1s" }}>✨</div>
