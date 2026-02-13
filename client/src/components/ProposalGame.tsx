@@ -52,7 +52,7 @@ const ProposalGame = () => {
 
         // Save to backend
         try {
-            await fetch('http://localhost:3000/api/save-response', {
+            await fetch('/api/save-response', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
