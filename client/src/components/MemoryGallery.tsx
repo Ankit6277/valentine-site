@@ -1,10 +1,10 @@
 import { motion } from "framer-motion";
 
 const memories = [
-    { id: 1, title: "The Low-Light Selfie", desc: "Thumbs up for surviving the day.", img: "/photo1.jpeg" },
+    { id: 1, title: "The Mutual Gaze", desc: "Staring contest where I’m happy to lose.", img: "/photo4.jpeg" },
     { id: 2, title: "The Traditional Fit", desc: "Classic attire, chaotic energy.", img: "/photo2.jpeg" },
-    { id: 3, title: "The College Block Shot", desc: "Making the campus look good for a change.", img: "/photo3.jpeg" },
-    { id: 4, title: "The Mutual Gaze", desc: "Staring contest where I’m happy to lose.", img: "/photo4.jpeg" },
+    { id: 3, title: "The Low-Light Selfie", desc: "Thumbs up for surviving the day.", img: "/photo1.jpeg" },
+    { id: 4, title: "The College Block Shot", desc: "Making the campus look good for a change.", img: "/photo3.jpeg" },
 ];
 
 const MemoryGallery = () => {
